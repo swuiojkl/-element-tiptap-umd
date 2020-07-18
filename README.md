@@ -1,1 +1,1 @@
-# -element-tiptap-umd
+# element-tiptap-umd

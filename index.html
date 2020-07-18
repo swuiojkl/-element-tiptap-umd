@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Demo</title>
+        <link rel="stylesheet" type="text/css" href="./dist/el-tiptap.css"></link>
+    </head>
+    <body>
+        <div id="app">
+            <el-tiptap
+                v-model="content"
+                :extensions="extensions"
+            />
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./dist/el-tiptap.umd.min.js"></script>
+    <script>
+        Vue.use(ElementTiptap)
+        let {
+            // necessary extensions
+            Doc,
+            Text,
+            Paragraph,
+            Heading,
+            Bold,
+            Underline,
+            Italic,
+            Strike,
+            Link,
+            Image,
+            Blockquote,
+            TextAlign,
+            ListItem,
+            BulletList,
+            OrderedList,
+            Indent,
+            HorizontalRule,
+            Table,
+            TableHeader,
+            TableCell,
+            TableRow,
+            TextColor,
+            TextHighlight,
+            FontSize,
+            Preview,
+            Print,
+            Fullscreen,
+            CodeView,
+            History,
+            codemirror
+        } = ElementTiptap
+        new Vue({
+            el : "#app",
+            data : {
+                extensions: [
+                    new Doc(),
+                    new Text(),
+                    new Paragraph(),
+                    new Heading({ level: 5 }),
+                    new Bold({ bubble: true }), // render command-button in bubble menu.
+                    new Underline({ bubble: true, menubar: false }), // render command-button in bubble menu but not in menubar.
+                    new Italic(),
+                    new Strike(),
+                    new Link(),
+                    new Image(),
+                    new Blockquote(),
+                    new TextAlign(),
+                    new ListItem(),
+                    new BulletList(),
+                    new OrderedList(),
+                    new Indent(),
+                    new HorizontalRule(),
+                    new Table(),
+                    new TableHeader(),
+                    new TableCell(),
+                    new TableRow(),
+                    new TextColor(),
+                    new TextHighlight(),
+                    new FontSize(),
+                    new Preview(),
+                    new Print(),
+                    new Fullscreen(),
+                    new CodeView({
+                        codemirror,
+                        codemirrorOptions: {
+                            styleActiveLine: true,
+                            autoCloseTags: true,
+                            tabSize: 4
+                        }
+                    }),
+                    new History()
+                ],
+                // editor's content
+                content: `<h2 style="text-align: center">Welcome To Element Tiptap Editor Demo</h2><p>🔥 <strong>Element Tiptap Editor </strong>🔥is a WYSIWYG rich-text editor using&nbsp; <a href="https://github.com/scrumpy/tiptap" rel="noopener noreferrer nofollow">tiptap</a>&nbsp;and <a href="https://github.com/ElemeFE/element" rel="noopener noreferrer nofollow">element-ui</a>&nbsp;for Vue.js <img src="https://i.ibb.co/nbRN3S2/undraw-upload-87y9.png" alt="" title="" height="200" data-display="right"> that\'s easy to use, friendly to developers, fully extensible and clean in design.</p><p></p><p style="text-align: right">👉Click on the image to get started image features 👉</p><p></p><p>You can switch to <strong>Code View </strong>💻 mode and toggle <strong>Fullscreen</strong> 📺 in this demo.</p><p></p><p><strong>Got questions or need help or feature request?</strong></p><p>🚀 <strong>welcome to submit an <a href="https://github.com/Leecason/element-tiptap/issues" rel="noopener noreferrer nofollow">issue</a></strong> 😊</p><p>I\'m continuously working to add in new features.</p><p></p><blockquote><p>This demo is simple, switch tab for more features.</p><p>All demos source code: <a href="https://github.com/Leecason/element-tiptap/blob/master/examples/views/Index.vue" rel="noopener noreferrer nofollow">source code 🔗</a></p></blockquote>`
+
+            }
+        })
+    </script>
+
+</html>
