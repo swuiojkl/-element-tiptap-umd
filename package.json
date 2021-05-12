@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "codemirror": "5.55.0",
+    "codemirror": "5.58.2",
     "element-tiptap": "^1.25.2",
     "element-ui": "^2.13.2",
     "vue": "^2.6.11"
